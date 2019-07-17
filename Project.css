@@ -1,0 +1,223 @@
+ html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+#header1
+{ height:  110px;
+  width: 1300px;
+  background-color: black;
+}
+#header2
+{ height:  65px;
+  width: 1300px;
+  background-color: white;
+}
+#BlackHeader
+{ height:  45px;
+  width: 1300px;
+  background-color: black;
+}
+#headerlogo
+{ height:  65px;
+  width: 65;
+  float: left;
+ }
+#headertext
+{ height:  5px;
+  width: 270px;
+  float: left;
+  margin-left: 470px;
+}
+ #HealthCare
+{ 
+  font-size: 40px;
+  margin-top: 15px;
+  margin-left:40px;
+  font-family: sans-serif;
+ }
+#headerlogos
+{ 
+  height: 65px;
+  width: 4;
+  background-color: white
+}
+#twitter
+{
+  height: 65px;
+  width: 65px;
+  float: right;
+}
+#instagram
+{
+  height: 60px;
+  width: 60px;
+  float: right;
+  margin-top: 3px;
+  margin-right: 20px;
+}
+#car
+{ 
+  height: 65px;
+  width: 65px;
+  
+  }
+#body
+{ height: 600px;
+  width:  1299px;	
+} 
+#FirstBody
+{
+	height: 200px;
+	width: 1299px;
+
+}
+#SecondBody
+{
+	height: 200px;
+	width: 1299px;
+
+}
+#ThirdBody
+{
+	height: 200px;
+	width: 1299px;
+}
+
+#LeftBody
+{
+	height: 200px;
+	width: 433px;
+    float: left;
+}
+
+#MidBody
+{
+	height: 200px;
+	width: 433px;
+    float: left;
+}
+#RightBody
+{
+	height: 200px;
+	width: 433px;
+    float: left;
+}
+
+#BodyImg
+{
+	height: 90px;
+	width: 90px;
+	margin-left: 150px;
+	margin-top: 20px;
+}
+#LogoText
+{
+	margin-left: 120px;
+	font-size: 23px;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+
+#Text21
+{
+	margin-left: 170px;
+	font-size: 23px;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+
+#Text22
+{
+	margin-left: 155px;
+	font-size: 23px;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+
+
+
+#Text32
+{
+	margin-left: 90px;
+	font-size: 23px;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+
+#Text33
+{
+	margin-left: 150px;
+	font-size: 23px;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+#appointments
+{
+	margin-left: 130px;
+	font-size: 23px;
+	font-family: sans-serif;
+	font-weight: 500;
+}
+
+#Img22
+{
+	height: 130px;
+	width: 130px;
+	margin-left: 120px;
+}
+
+
+footer
+{ height: 85px;
+  width: 1299px;
+  background-color: black;
+  color: white
+}
+#vision
+{
+padding-right: 9px;
+float: right;
+}
+#valley
+{
+	height: 80px;
+	width: 250px;
+    float: left;
+}
+
+#login
+{
+    font-size: 50px;
+    text-align: center; 
+    margin-left: 470px;
+    text-decoration:none;
+    color: black;
+}
+#signup
+{
+    font-size: 50px;
+    margin-left: 50px;
+    text-decoration:none;
+    color: black;
+
+}
+#loginDiv
+{
+    height: 400px;
+    width: 1299px;
+}
+#loginUsername
+{
+    font-size: 40px;
+
+}
+th {
+
+    font-size: 20px;
+
+}
+
