@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="Project.css">	
+</head>
+<body>
+<header id="header1">
+<!--white header -->	
+<div id="header2">
+<!--header logo -->	
+<div id="headerlogo"><a href="home.html"><img id="car" src="h.png"></a>
+</div>
+<!--header text -->	
+<div id="headertext">
+<p id="HealthCare"> Health Care</p>
+</div>
+<!--header logos -->	
+<div id="headerlogos">
+<a href="https://www.instagram.com/"><img id="instagram" src="instagram.png"></a>
+<a href="https://twitter.com/"><img id="twitter" src="twitter.png"></a>
+</div>	
+<!--black header -->
+<div id="BlackHeader"></div>
+</header>
+
+<div id="bodyx1">
+<!--First Body -->
+
+<div id="loginDiv"><table >
+                <tr>
+                  <th> Name</th>
+                  <th><input type="text" name="username" id="usertxt"></th>
+                </tr>
+                <tr>
+                <th> Specialty Type</th>
+                <th>
+                  <select name="SpecialtyType">
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Pediatrician">Pediatrician</option>
+                    <option value="Surgery">Orthopedic Surgery</option>
+                    <option value="Neurology">Neurology</option>
+                  </select>
+                </th>              
+                </tr>
+                <tr>
+                  <th> Years active</th>
+                  <th><input type="text" name="YearsActive" id="YearsActive"></th>              
+                  </tr>
+
+                <tr>
+                        <th></th>
+                        <th><button id="mybutton">Sign up</button></th>
+
+                </tr>
+              </table>
+                </div>
+ 
+
+</div>
+<footer>
+<img id="valley" src="valley.png">	
+<img id="vision" src="vision.png">	
+</footer>
+<script>
+
+App = {
+    web3Provider: null,
+    contracts: {},
+  
+    init: function() {
+      return App.initWeb3();
+    },
+
+    initWeb3: async function () {
+      // Modern dapp browsers...
+      if (window.ethereum) {
+        App.web3Provider = window.ethereum;
+        try {
+          // Request account access
+          await window.ethereum.enable();
+        } catch (error) {
+          // User denied account access...
+          console.error("User denied account access")
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        App.web3Provider = window.web3.currentProvider;
+      }
+      // If no injected web3 instance is detected, fall back to Ganache
+      else {
+        App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+      }
+      web3 = new Web3(App.web3Provider);
+  
+      return App.initContract();
+    },
+  
+  
+    initContract: function() {
+        //THIS IS THE API IF YOU ARE USING REMIX 
+      $.getJSON('Idea.json', function(data) {
+        // Get the necessary contract artifact file and instantiate it with truffle-contract.
+        var Idea = data;
+        App.contracts.Idea = TruffleContract(Idea);
+  
+        // Set the provider for our contract.
+        App.contracts.Idea.setProvider(App.web3Provider);
+        console.log(App.web3Provider);
+        web3.eth.getAccounts(function(error, accounts) {
+          if (error) {
+            console.log("Error:"+ error);
+          }
+    
+          var account = accounts[0];
+          console.log(accounts)
+          console.log(account)
+  
+  
+        // Use our contract to retieve idea HERE
+        return App.getIdea();
+      });
+      
+      }
+    
+      )}}
+
+</script>
+</body>
+</html>

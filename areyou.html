@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="Project.css">	
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+</head>
+<body>
+<header id="header1">
+<!--white header -->	
+<div id="header2">
+<!--header logo -->	
+<div id="headerlogo"><a href="home.html"><img id="car" src="h.png"></a>
+</div>
+<!--header text -->	
+<div id="headertext">
+<p id="HealthCare"> Health Care</p>
+</div>
+<!--header logos -->	
+<div id="headerlogos">
+<a href="https://www.instagram.com/"><img id="instagram" src="instagram.png"></a>
+<a href="https://twitter.com/"><img id="twitter" src="twitter.png"></a>
+</div>	
+<!--black header -->
+<div id="BlackHeader"></div>
+</header>
+
+<div id="bodyx">
+
+				<p id="areyou">Are you Doctor or Patient?</p>
+		
+		<!--Second Body -->
+		<a href="DoctorSignup.html"><button id="signupButton1">Doctor</button></a>
+		<a href="PatientSignup.html"><button id="signupButton2">Patient</button></a>
+
+
+		
+		
+		
+		
+		
+		
+		
+		</div>
+<footer>
+<img id="valley" src="valley.png">	
+<img id="vision" src="vision.png">	
+</footer>
+<script>
+    //connect to web3 providor
+    if (typeof web3 !== 'undefined') {
+       web3 = new Web3(web3.currentProvider);
+   } else {
+       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+   }
+
+   web3.eth.defaultAccount = web3.eth.accounts[2];
+
+   var RemixContract = web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "array",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "array2",
+		"outputs": [
+			{
+				"name": "username",
+				"type": "string"
+			},
+			{
+				"name": "password",
+				"type": "string"
+			},
+			{
+				"name": "age",
+				"type": "uint256"
+			},
+			{
+				"name": "category",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_username",
+				"type": "string"
+			},
+			{
+				"name": "_password",
+				"type": "string"
+			},
+			{
+				"name": "_age",
+				"type": "uint256"
+			},
+			{
+				"name": "_category",
+				"type": "string"
+			}
+		],
+		"name": "createAccount",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]);
+
+   var user = RemixContract.at('0x9eC11CCbb8759BB5d46F7Dec376e53E775B7a19a');
+   console.log(user);
+
+    $("#mybutton").click(function(){ 
+    user.createAccount($("#usertxt").val() , $("#passwordtxt").val() , $("#agetxt").val() , $("#categorytxt").val() );
+
+});
+
+</script>
+</body>
+</html>

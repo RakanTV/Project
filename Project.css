@@ -69,6 +69,14 @@
 { height: 600px;
   width:  1299px;	
 } 
+#bodyx
+{ height: 390px;
+  width:  1299px;	
+} 
+#bodyx1
+{ height: 440px;
+  width:  1299px;	
+} 
 #FirstBody
 {
 	height: 200px;
@@ -119,7 +127,9 @@
 	margin-left: 120px;
 	font-size: 23px;
 	font-family: sans-serif;
-	font-weight: 500;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
 }
 
 #Text21
@@ -127,18 +137,21 @@
 	margin-left: 170px;
 	font-size: 23px;
 	font-family: sans-serif;
-	font-weight: 500;
+    font-weight: 500;
+    text-decoration:none;
+
 }
 
 #Text22
 {
+    text-decoration: none;
 	margin-left: 155px;
-	font-size: 23px;
+    font-size: 23px;
+    color: black;
 	font-family: sans-serif;
-	font-weight: 500;
+    font-weight: 500;
+
 }
-
-
 
 #Text32
 {
@@ -189,7 +202,7 @@ float: right;
     float: left;
 }
 
-#login
+#doctor
 {
     font-size: 50px;
     text-align: center; 
@@ -197,7 +210,7 @@ float: right;
     text-decoration:none;
     color: black;
 }
-#signup
+#patient
 {
     font-size: 50px;
     margin-left: 50px;
@@ -221,3 +234,37 @@ th {
 
 }
 
+#signupButton1{
+    height: 50px;
+    width: 100px;
+    margin-left: 500px
+
+}
+
+#signupButton2{
+    height: 50px;
+    width: 100px;
+    margin-left: 10px;
+    
+}
+
+a {
+    text-decoration: none;
+    }
+
+#areyou
+{
+    margin-top: 50px;
+    margin-left: 420px;
+    font-size: 40px;
+    color: black;
+    }
+
+    #welcome
+{
+    margin-top: 50px;
+    margin-left: 520px;
+    font-size: 40px;
+    color: black;
+
+    }
