@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<link rel="stylesheet" type="text/css" href="./css/Project.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+</head>
+<body>
+<header id="header1">
+<!--white header -->	
+<div id="header2">
+<!--header logo -->	
+<div id="headerlogo"><a href="index.html"><img id="car" src="./images/h.png"></a>
+</div>
+<!--header text -->	
+<div id="headertext">
+<p id="HealthCare"> Health Care</p>
+</div>
+<!--header logos -->	
+<div id="headerlogos">
+<a href="https://www.instagram.com/"><img id="instagram" src="./images/instagram.png"></a>
+<a href="https://twitter.com/"><img id="twitter" src="./images/twitter.png"></a>
+</div>	
+<!--black header -->
+<div id="BlackHeader"></div>
+</header>
+
+<div id="bodyx1">
+<!--First Body -->
+
+<div id="loginDiv"><table >
+                <tr>
+                  <th> Name</th>
+                  <th><input type="text" name="username" id="nametext"></th>
+                </tr>
+                <tr>
+                <th> Specialty Type</th>
+                <th>
+                  <select id="type"name="SpecialtyType">
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Pediatrician">Pediatrician</option>
+                    <option value="Surgery">Orthopedic Surgery</option>
+                    <option value="Neurology">Neurology</option>
+                  </select>
+                </th>              
+                </tr>
+                <tr>
+                  <th> Years active</th>
+                  <th><input type="text" name="YearsActive" id="YearsActive"></th>              
+                  </tr>
+
+                <tr>
+                        <th></th>
+                        <th><button id="mybutton">Sign up</button></th>
+
+                </tr>
+              </table>
+                </div>
+ 
+
+</div>
+<footer>
+<img id="valley" src="./images/valley.png">	
+<img id="vision" src="./images/vision.png">	
+</footer>
+<script>
+  //connect to web3 providor
+  if (typeof web3 !== 'undefined') {
+     web3 = new Web3(web3.currentProvider);
+ } else {
+     web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+ }
+
+ web3.eth.defaultAccount = web3.eth.accounts[0];
+
+ var RemixContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_specialty",
+				"type": "string"
+			},
+			{
+				"name": "_year",
+				"type": "uint256"
+			}
+		],
+		"name": "SignupForDoctor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_gender",
+				"type": "string"
+			},
+			{
+				"name": "_age",
+				"type": "uint256"
+			}
+		],
+		"name": "SignupForPatient",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "lengthOfArray",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "AddAdress",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "AddressArray",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
+
+ var user = RemixContract.at('0x30b1142d6e681ce54aa03fc624e26a1b519e3df5');
+ console.log(user);
+
+ $("#mybutton").click(function(){ 
+    user.SignupForDoctor($("#nametext").val() , $("#type").val() , 
+                        $("#YearsActive").val());
+});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
