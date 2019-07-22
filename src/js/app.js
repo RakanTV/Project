@@ -65,7 +65,7 @@ web3 = new Web3(App.web3Provider);
   },
 
   bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
+    $(document).on('click', 'mybutton', App.addDoctor);
   },
 
   markAdopted: function(adopters, account) {
@@ -95,9 +95,9 @@ web3 = new Web3(App.web3Provider);
   App.contracts.projet.deployed().then(function(instance) {
   adoptionInstance = instance;
 
-  return adoptionInstance.addDoctor.call();
+  return adoptionInstance.SignupForDoctor.call();
 }).then(function(adopters) {
-  console.log("success");
+  //console.log("success");
   console.log(adopters);
   }
 ).catch(function(err) {

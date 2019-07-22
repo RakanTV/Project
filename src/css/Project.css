@@ -237,14 +237,14 @@ th {
 #signupButton1{
     height: 50px;
     width: 100px;
-    margin-left: 500px
+    margin-left: 200px
 
 }
 
 #signupButton2{
     height: 50px;
     width: 100px;
-    margin-left: 10px;
+    margin-left: 20px;
     
 }
 
@@ -260,11 +260,21 @@ a {
     color: black;
     }
 
-    #welcome
+    #signup
 {
     margin-top: 50px;
-    margin-left: 520px;
-    font-size: 40px;
+    margin-left: 670px;
+    font-size: 30px;
     color: black;
 
+    }
+    #nametxt {
+        width: 300px;
+    }
+    #loginbutton {
+
+        height: 50px;
+        width: 100px;
+        margin-left: 300px
+    
     }
